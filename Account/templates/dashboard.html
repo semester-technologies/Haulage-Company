@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+                {{ message }}
+        {% endfor %}
+    {% endif %}
+    
+    <h1>Dashboard</h1>
+
+    <P>the user cuurently logged in is {{ user.username }} </P>
+
+    <div class="" style="justify-items: center; background-color: gray; padding: 50px;">
+        {% if user_account_status %}
+            <p>Your account is approved!</p>
+            <br>
+            <a href="{% url 'referral-list' %}">Check your referal here</a>
+            <br>
+            <a href="{% url 'submit-kyc' %}">Submit Kyc</a>
+            <br>
+            <a href="{% url 'loan-request' %}"> Request a loan </a>
+            <br>
+            <a href="{% url 'initialize_payment' %}">Make a payment</a>
+            <br>
+            <a href="{% url 'wallet_balance' %}">Wallet </a>
+
+            <br>
+            <a href="{% url 'transaction_history' %}">Transactions</a>
+        {% else %}
+            <p>Your account is not approved yet, check back later.</p>
+        {% endif %}
+
+    </div>        
+    <br>
+
+    
+    <br>
+    <br>
+    <a href="{% url 'user-profile' %}">Profile</a>
+    <br>
+    <a href="{% url 'logout-user' %}">Logout here</a>
+    
+    
+</body>
+</html>

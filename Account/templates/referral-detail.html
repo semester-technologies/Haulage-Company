@@ -1,0 +1,16 @@
+<h1>{{ referral_user.username }}'s Details</h1>
+<p>Email: {{ referral_user.email }}</p>
+<p>First Name: {{ referral_user.first_name }}</p>
+<p>Last Name: {{ referral_user.last_name }}</p>
+<p>Last Name: {{ referral_user.username }}</p>
+
+<p>Bio: {{ referral_user.bio }}</p>
+
+<form method="post" action="{% url 'approve-referral' referral_user.id %}">
+    {% csrf_token %}
+    <button type="submit">Approve</button>
+</form>
+<form method="post" action="{% url 'reject-referral' referral_user.id %}">
+    {% csrf_token %}
+    <button type="submit">Reject</button>
+</form>
