@@ -1,8 +1,0 @@
-<h1>Pending Approvals</h1>
-<ul>
-    {% for referral in pending_referrals %}
-        <li>
-            <a href="{% url 'referral-detail' referral.id %}">{{ referral.username }}</a>
-        </li>
-    {% endfor %}
-</ul>

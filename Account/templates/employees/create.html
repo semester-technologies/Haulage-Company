@@ -1,0 +1,15 @@
+<h2>Add Employee</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="full_name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <select name="role"> 
+        <option value="Manager">Manager</option> 
+        <option value="Registrar">Registrar</option> 
+        <option value="Driver">Driver</option> 
+        <option value="AssistantDriver">Assistant Driver</option> 
+        <option value="MaintenanceOfficer">Maintenance Officer</option>
+    </select>
+    <button type="submit">Add</button>
+</form>

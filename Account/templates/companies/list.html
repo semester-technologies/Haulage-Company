@@ -1,0 +1,9 @@
+<h2>Companies</h2>
+<ul>
+    {% for company in companies %}
+    <li>{{ company.name }} 
+        <a href="{% url 'company_delete' company.id %}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'company_create' %}">Add Company</a>

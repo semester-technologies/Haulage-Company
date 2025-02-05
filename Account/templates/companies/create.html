@@ -1,0 +1,6 @@
+<h2>Create Company</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Company Name" required>
+    <button type="submit">Create</button>
+</form>
